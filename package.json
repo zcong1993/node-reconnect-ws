@@ -1,0 +1,29 @@
+{
+  "name": "node-reconnect-ws",
+  "version": "0.0.0",
+  "description": "A reconnection wrapper of websocket in node",
+  "repository": {
+    "url": "zcong1993/node-reconnect-ws",
+    "type": "git"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "npm run lint && echo 'no tests!'",
+    "lint": "xo"
+  },
+  "author": "zcong1993 <1005997919@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint-config-rem": "^3.0.0",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "extends": "rem"
+  }
+}
