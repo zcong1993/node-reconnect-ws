@@ -29,6 +29,7 @@ class ReconnectWS extends EventEmitter {
    */
   connect() {
     if (this.retries++ >= this.maxRetries) {
+      this.emit('maxRetries', this.maxRetries)
       return console.log(`Too many failed connection attempts, ${this.maxRetries}`)
     }
     try {

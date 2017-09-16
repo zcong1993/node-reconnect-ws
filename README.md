@@ -26,6 +26,7 @@ const wsc = new nodeReconnectWs({
 
 wsc.on('message', data => console.log(data))
 wsc.on('error', err => console.log(err))
+wsc.on('maxRetries', times => console.log(`tried ${times} all failed`))
 ```
 
 ## Contributing
