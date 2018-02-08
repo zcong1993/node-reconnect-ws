@@ -18,7 +18,7 @@
   "author": "zcong1993 <1005997919@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "ws": "^3.1.0"
+    "ws": "^4.0.0"
   },
   "typings": "index.d.ts",
   "devDependencies": {
