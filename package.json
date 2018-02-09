@@ -1,6 +1,6 @@
 {
   "name": "node-reconnect-ws",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A reconnection wrapper of websocket in node",
   "repository": {
     "url": "zcong1993/node-reconnect-ws",
