@@ -3,14 +3,13 @@ const WebSocket = require('ws')
 
 /**
  * auto reconnect websocket wrapper
- * @constructor { url, protocol, webSocket, reconnectInterval, autoConnect }
+ * @constructor { url, protocol, reconnectInterval, autoConnect }
  * @return {EventEmitter}
  */
 class ReconnectWS extends EventEmitter {
   constructor({
     url,
     protocol = [],
-    webSocket = WebSocket,
     reconnectInterval = 4000,
     autoConnect = true,
     maxRetries = Infinity
@@ -19,7 +18,7 @@ class ReconnectWS extends EventEmitter {
     this.shouldClose = false
     this.url = url
     this.protocol = protocol
-    this.webSocket = webSocket
+    this.webSocket = WebSocket
     this.reconnectInterval = reconnectInterval
     this.maxRetries = maxRetries
     this.retries = 0
@@ -89,6 +88,9 @@ class ReconnectWS extends EventEmitter {
   }
   get inited() {
     return Boolean(this.ws)
+  }
+  get ready() {
+    return this.inited && this.ws.readyState === WebSocket.OPEN
   }
 }
 
