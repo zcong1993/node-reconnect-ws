@@ -11,10 +11,12 @@ interface Opts {
 }
 
 declare class ReconnectWS extends EventEmitter {
+  inited: boolean
   constructor(opts: Opts)
   connect()
   send(data: any)
   set(key: string, value: any)
+  close()
 }
 
 export = ReconnectWS
