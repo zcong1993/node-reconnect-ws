@@ -23,7 +23,7 @@
   "typings": "index.d.ts",
   "devDependencies": {
     "eslint-config-rem": "^4.0.0",
-    "xo": "^0.18.0"
+    "xo": "0.20.0"
   },
   "xo": {
     "extends": "rem"

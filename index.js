@@ -26,6 +26,7 @@ class ReconnectWS extends EventEmitter {
     this.notConnectErr = new Error('not connect')
     autoConnect && this.connect()
   }
+
   /**
    * ws connnection handler
    */
@@ -53,6 +54,7 @@ class ReconnectWS extends EventEmitter {
       return this.emit('close', err)
     })
   }
+
   /**
    * proxy of websocket.send()
    * @param {String} data
@@ -67,6 +69,7 @@ class ReconnectWS extends EventEmitter {
       this.emit('error', err)
     }
   }
+
   /**
    * exposed to change proto of websocket instance
    * @param {String} key
@@ -75,6 +78,7 @@ class ReconnectWS extends EventEmitter {
   set(key, value) {
     this.ws[key] = value
   }
+
   /**
    * exit and close ws connection
   */
@@ -86,9 +90,11 @@ class ReconnectWS extends EventEmitter {
     this.ws.close()
     console.log('exit...')
   }
+
   get inited() {
     return Boolean(this.ws)
   }
+
   get ready() {
     return this.inited && this.ws.readyState === WebSocket.OPEN
   }
