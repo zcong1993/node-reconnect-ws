@@ -1,11 +1,11 @@
-import { EventEmitter } from "events"
+import { EventEmitter } from 'events'
 
-interface Opts {
+export interface Opts {
   url: string,
-  protocol?: string[] | [],
-  reconnectInterval?: Number | 4000,
-  autoConnect?: boolean | true,
-  maxRetries?: Number | Infinity
+  protocol?: string[],
+  reconnectInterval?: number,
+  autoConnect?: boolean,
+  maxRetries?: number
 }
 
 declare class ReconnectWS extends EventEmitter {

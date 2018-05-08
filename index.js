@@ -33,12 +33,15 @@ class ReconnectWS extends EventEmitter {
   connect() {
     if (this.retries++ >= this.maxRetries) {
       this.emit('maxRetries', this.maxRetries)
-      return console.log(`Too many failed connection attempts, ${this.maxRetries}`)
+      return console.log(
+        `Too many failed connection attempts, ${this.maxRetries}`
+      )
     }
     try {
       this.ws = new this.webSocket(this.url, this.protocol) // eslint-disable-line new-cap
     } catch (err) {
-      !this.shouldClose && setTimeout(() => this.connect(), this.reconnectInterval)
+      !this.shouldClose &&
+        setTimeout(() => this.connect(), this.reconnectInterval)
       return this.emit('close', err)
     }
     this.ws.on('open', info => {
@@ -50,7 +53,8 @@ class ReconnectWS extends EventEmitter {
     this.ws.on('error', err => this.emit('error', err))
     this.ws.on('close', err => {
       console.log('socket close')
-      !this.shouldClose && setTimeout(() => this.connect(), this.reconnectInterval)
+      !this.shouldClose &&
+        setTimeout(() => this.connect(), this.reconnectInterval)
       return this.emit('close', err)
     })
   }
@@ -61,7 +65,7 @@ class ReconnectWS extends EventEmitter {
    */
   send(data) {
     if (!this.inited) {
-      throw (this.notConnectErr)
+      throw this.notConnectErr
     }
     try {
       this.ws.send(data)
@@ -81,10 +85,10 @@ class ReconnectWS extends EventEmitter {
 
   /**
    * exit and close ws connection
-  */
+   */
   close() {
     if (!this.inited) {
-      throw (this.notConnectErr)
+      throw this.notConnectErr
     }
     this.shouldClose = true
     this.ws.close()

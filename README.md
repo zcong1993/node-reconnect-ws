@@ -1,7 +1,6 @@
-
 # node-reconnect-ws
 
-[![NPM version](https://img.shields.io/npm/v/node-reconnect-ws.svg?style=flat)](https://npmjs.com/package/node-reconnect-ws) [![NPM downloads](https://img.shields.io/npm/dm/node-reconnect-ws.svg?style=flat)](https://npmjs.com/package/node-reconnect-ws) [![CircleCI](https://circleci.com/gh/zcong1993/node-reconnect-ws/tree/master.svg?style=shield)](https://circleci.com/gh/zcong1993/node-reconnect-ws/tree/master) 
+[![NPM version](https://img.shields.io/npm/v/node-reconnect-ws.svg?style=flat)](https://npmjs.com/package/node-reconnect-ws) [![NPM downloads](https://img.shields.io/npm/dm/node-reconnect-ws.svg?style=flat)](https://npmjs.com/package/node-reconnect-ws) [![CircleCI](https://circleci.com/gh/zcong1993/node-reconnect-ws/tree/master.svg?style=shield)](https://circleci.com/gh/zcong1993/node-reconnect-ws/tree/master)
 
 ## Install
 
@@ -31,12 +30,11 @@ wsc.on('maxRetries', times => console.log(`tried ${times} all failed`))
 
 ## Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a pull request :D
 
 ## Author
 
