@@ -12,7 +12,8 @@ class ReconnectWS extends EventEmitter {
     protocol = [],
     reconnectInterval = 4000,
     autoConnect = true,
-    maxRetries = Infinity
+    maxRetries = Infinity,
+    wsOptions = {}
   } = {}) {
     super()
     this.shouldClose = false
@@ -22,6 +23,7 @@ class ReconnectWS extends EventEmitter {
     this.reconnectInterval = reconnectInterval
     this.maxRetries = maxRetries
     this.retries = 0
+    this.wsOptions = wsOptions
     this.ws = null
     this.notConnectErr = new Error('not connect')
     autoConnect && this.connect()
@@ -38,7 +40,7 @@ class ReconnectWS extends EventEmitter {
       )
     }
     try {
-      this.ws = new this.webSocket(this.url, this.protocol) // eslint-disable-line new-cap
+      this.ws = new this.webSocket(this.url, this.protocol, this.wsOptions) // eslint-disable-line new-cap
     } catch (err) {
       !this.shouldClose &&
         setTimeout(() => this.connect(), this.reconnectInterval)

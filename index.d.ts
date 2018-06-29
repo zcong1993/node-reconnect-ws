@@ -5,7 +5,8 @@ export interface Opts {
   protocol?: string[],
   reconnectInterval?: number,
   autoConnect?: boolean,
-  maxRetries?: number
+  maxRetries?: number,
+  wsOptions?: object
 }
 
 declare class ReconnectWS extends EventEmitter {
