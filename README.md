@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-yarn add node-reconnect-ws
+$ yarn add node-reconnect-ws
 ```
 
 ## Usage
@@ -20,7 +20,12 @@ const wsc = new nodeReconnectWs({
   webSocket: WebSocket,
   reconnectInterval: 4000,
   autoConnect: true,
-  maxRetries: Infinity
+  maxRetries: Infinity,
+  wsOptions: {
+    headers: {
+      foo: 'bar'
+    }
+  }
 })
 
 wsc.on('message', data => console.log(data))
