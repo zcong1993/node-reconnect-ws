@@ -12,12 +12,10 @@ $ yarn add node-reconnect-ws
 
 ```js
 const nodeReconnectWs = require('node-reconnect-ws')
-const WebSocket = require('ws')
 
 const wsc = new nodeReconnectWs({
   url: url,
   protocol: [],
-  webSocket: WebSocket,
   reconnectInterval: 4000,
   autoConnect: true,
   maxRetries: Infinity,
