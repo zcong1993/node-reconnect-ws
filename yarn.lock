@@ -2636,9 +2636,9 @@ xo-init@^0.7.0:
     the-argv "^1.0.0"
     write-pkg "^3.1.0"
 
-xo@0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/xo/-/xo-0.20.1.tgz#c1130abb3ef0dfb9a4e51d3ea702784315f63616"
+xo@0.20.3:
+  version "0.20.3"
+  resolved "https://registry.yarnpkg.com/xo/-/xo-0.20.3.tgz#6fb1597b5e361fd561535bbf84cf97eefaac5d80"
   dependencies:
     arrify "^1.0.1"
     debug "^3.1.0"
